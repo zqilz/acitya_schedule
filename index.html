@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <link rel="stylesheet" href="sch.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center;">Class Schedule</h1>
+    <div id="current-time" style="text-align: center; font-size: 18px; margin-bottom: 10px;"></div>
+    <div class="controls-container">
+        <div class="toggle-container">
+            <label for="toggle-dark-mode">Dark Mode</label>
+            <input type="checkbox" id="toggle-dark-mode">
+        </div>
+        <div class="toggle-container">
+            <label for="toggle-week-view">Weekly View</label>
+            <input type="checkbox" id="toggle-week-view">
+        </div>
+        <div class="select-container">
+            <select id="class" onchange="showSchedule()">
+                <option value="X-1">X-1</option>
+                <option value="X-2">X-2</option>
+                <option value="X-3">X-3</option>
+                <option value="XI-1">XI-1</option>
+                <option value="XI-2">XI-2</option>
+                <option value="XI-3">XI-3</option>
+                <option value="XII">XII</option>
+            </select>
+            <select id="day" onchange="showSchedule()">
+                <option value="mon">Monday</option>
+                <option value="tues">Tuesday</option>
+                <option value="wed">Wednesday</option>
+                <option value="thu">Thursday</option>
+                <option value="fri">Friday</option>
+            </select>
+        </div>
+    </div>
+    <div id="tablediv">
+        <table id="schedule"></table>
+    </div>
+    <script type="text/javascript" src="sch.js"></script>
+</body>
+</html>
