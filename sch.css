@@ -186,7 +186,7 @@ body.dark-mode .ongoing-class {
     color: #fbd38d;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     body {
         padding: 20px 10px;
     }
