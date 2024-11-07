@@ -761,9 +761,10 @@ function showWeekSchedule() {
 
     // Create a container div for the schedules
     const containerDiv = document.createElement('div');
+    containerDiv.className = 'schedule-container'; // Add this class
     containerDiv.style.display = 'flex';
     containerDiv.style.justifyContent = 'space-between';
-    containerDiv.style.gap = '20px'; // Add some space between the schedules
+    containerDiv.style.gap = '20px';
 
     // Create Mon-Thu schedule table
     const monThuTable = document.createElement('table');
