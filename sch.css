@@ -201,4 +201,19 @@ body.dark-mode .ongoing-class {
         padding: 0.75rem;
         font-size: 0.9rem;
     }
+    
+    #tablediv {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .schedule-container {
+        min-width: 800px; /* Minimum width to ensure all content is visible */
+    }
+
+    #schedule {
+        width: 100%;
+    }
 }
