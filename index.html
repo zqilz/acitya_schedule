@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Schedule</title>
-    <link rel="stylesheet" href="sch.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Acitya Schedule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1 style="text-align: center;">Class Schedule</h1>
-    <div id="current-time" style="text-align: center; font-size: 18px; margin-bottom: 10px;"></div>
-    <div class="controls-container">
-        <div class="toggle-container">
-            <label for="toggle-dark-mode">Dark Mode</label>
-            <input type="checkbox" id="toggle-dark-mode">
-        </div>
-        <div class="toggle-container">
-            <label for="toggle-week-view">Weekly View</label>
-            <input type="checkbox" id="toggle-week-view">
-        </div>
-        <div class="select-container">
-            <select id="class" onchange="showSchedule()">
-                <option value="X-1">X-1</option>
-                <option value="X-2">X-2</option>
-                <option value="X-3">X-3</option>
-                <option value="XI-1">XI-1</option>
-                <option value="XI-2">XI-2</option>
-                <option value="XI-3">XI-3</option>
-                <option value="XII">XII</option>
-            </select>
-            <select id="day" onchange="showSchedule()">
-                <option value="mon">Monday</option>
-                <option value="tues">Tuesday</option>
-                <option value="wed">Wednesday</option>
-                <option value="thu">Thursday</option>
-                <option value="fri">Friday</option>
-            </select>
-        </div>
+<body class="dark-theme">
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-calendar-alt fa-fw"></i> School Schedule</h1>
+        </header>
+
+        <nav class="controls">
+            <div class="control-group">
+                <label for="class-selector"><i class="fa-solid fa-users fa-fw"></i> Class:</label>
+                <div class="select-wrapper">
+                    <select id="class-selector">
+                        <option value="X-1">X-1</option>
+                        <option value="X-2">X-2</option>
+                        <option value="X-3">X-3</option>
+                        <option value="XI-1">XI-1</option>
+                        <option value="XI-2">XI-2</option>
+                        <option value="XI-3">XI-3</option>
+                        <option value="XII">XII</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label><i class="fa-solid fa-calendar-day fa-fw"></i> Day:</label>
+                <div class="day-selector" id="day-selector">
+                    <button class="day-btn" data-day="Monday">Mon</button>
+                    <button class="day-btn" data-day="Tuesday">Tue</button>
+                    <button class="day-btn" data-day="Wednesday">Wed</button>
+                    <button class="day-btn" data-day="Thursday">Thu</button>
+                    <button class="day-btn" data-day="Friday">Fri</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="schedule-area">
+            <h2 id="schedule-title">Schedule for X-1 - Monday</h2>
+            <div id="schedule-display" class="schedule-display fade-transition">
+                <div class="loading-state">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Loading schedule...
+                </div>
+            </div>
+        </main>
     </div>
-    <div id="tablediv">
-        <table id="schedule"></table>
-    </div>
-    <script type="text/javascript" src="sch.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
